@@ -63,7 +63,6 @@ function onKeyPress(button){
 <html>
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/css/index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swipe-keyboard@latest/build/css/index.css">
 </head>
 
 <body>
@@ -73,7 +72,7 @@ function onKeyPress(button){
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swipe-keyboard@latest/build/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-keyboard-autocorrect@latest/build/index.min.js"></script>
   <script src="src/index.js"></script>
 </body>
 
