@@ -48,9 +48,7 @@ function onKeyPress(button){
 
 ````html
 <input class="input" />
-<div class="keyboardContainer">
-  <div class="simple-keyboard"></div>
-</div>
+<div class="simple-keyboard"></div>
 ````
 
 <a href="https://codesandbox.io/s/mm7667xqqp" title="run demo" target="_blank"><img src="https://franciscohodge.com/project-pages/simple-keyboard/images/rundemo200.png" width="150" align="center"></a>
@@ -67,9 +65,7 @@ function onKeyPress(button){
 
 <body>
   <input class="input" />
-  <div class="keyboardContainer">
-    <div class="simple-keyboard"></div>
-  </div>
+  <div class="simple-keyboard"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-keyboard-autocorrect@latest/build/index.min.js"></script>
