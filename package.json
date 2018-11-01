@@ -1,6 +1,6 @@
 {
   "name": "simple-keyboard-autocorrect",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Autocorrect module for simple-keyboard",
   "main": "build/index.js",
   "scripts": {
@@ -39,9 +39,6 @@
   "dependencies": {
     "fuzzyset.js": "0.0.7"
   },
-  "peerDependencies": {
-    "simple-keyboard": "^2.7.0"
-  },
   "devDependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "^6.26.3",
@@ -76,7 +73,7 @@
     "react": "^16.2.0",
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.2.0",
-    "simple-keyboard": "^2.7.0",
+    "simple-keyboard": "^2.7.5",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "uglify-es": "^3.3.9",

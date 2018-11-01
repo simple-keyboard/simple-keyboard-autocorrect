@@ -1,49 +1,55 @@
 
 import FuzzySet from 'fuzzyset.js';
-import defaultWords from '../assets/words.json';
-import SimpleKeyboard from "simple-keyboard";
 
-class SimpleKeyboardAutocorrect extends SimpleKeyboard {
-  constructor(...options){
-    super(...options);
-
-    this._moduleInit();
-    delete this._moduleInit;
-  }
-
-  _moduleInit = () => {
-    this.set = FuzzySet(this.options.words || defaultWords);
-
-    this.registerModule(
+class SimpleKeyboardAutocorrect {
+  init = (keyboard) => {
+    keyboard.registerModule(
       "autocorrect",
       (module) => {
+        module.setDictionary = (wordsArray) => {
+          module.wordBank = FuzzySet(wordsArray);
+        }
+
         module.get = (string) => {
-          return this.set.get(string);
+          return module.set.get(string);
+        }
+
+        module.setDictionary(keyboard.options.autocorrectDict);
+        
+        module.fn = {};
+        module.fn.handleButtonClicked = keyboard.handleButtonClicked;
+
+        keyboard.handleButtonClicked = (button) => {
+          let hotkey = keyboard.options.autocorrectHotkey || "{space}";
+
+          let autocorrectedWord = '';
+          let searchFor = '';
+      
+          if(button === hotkey && !keyboard.options.disableAutocorrectSetInput){
+            let input = keyboard.getInput();
+            let inputWords = input.split(" ");
+            searchFor = inputWords[inputWords.length - 1];
+      
+            if(inputWords) {
+              autocorrectedWord = module.wordBank.get(searchFor);
+      
+              if(autocorrectedWord){
+                let autocorrectedWordStr = autocorrectedWord[0][1];
+                inputWords[inputWords.length - 1] = autocorrectedWordStr;
+                keyboard.setInput(inputWords.join(" "));
+                keyboard.utilities.updateCaretPos(autocorrectedWordStr.length);
+              }
+            }
+          }
+
+          if(typeof keyboard.options.onAutocorrectPrediction === "function" && autocorrectedWord && searchFor){
+            keyboard.options.onAutocorrectPrediction(searchFor, autocorrectedWord)
+          }
+      
+          module.fn.handleButtonClicked(button);
         }
       }
     );
-  }
-
-  handleButtonClicked(button){
-    let hotkey = this.options.autocorrectHotkey || "{space}";
-
-    if(button === hotkey && !this.options.disableAutocorrectSetInput){
-      let input = this.getInput();
-      let inputWords = input.split(" ");
-
-      if(inputWords) {
-        let autocorrectedWord = this.modules.autocorrect.get(inputWords[inputWords.length - 1]);
-
-        if(autocorrectedWord){
-          let autocorrectedWordStr = autocorrectedWord[0][1];
-          inputWords[inputWords.length - 1] = autocorrectedWordStr;
-          this.setInput(inputWords.join(" "));
-          this.utilities.updateCaretPos(autocorrectedWordStr.length);
-        }
-      }
-    }
-
-    super.handleButtonClicked(button);
   }
 }
 

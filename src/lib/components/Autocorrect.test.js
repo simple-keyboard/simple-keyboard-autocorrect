@@ -1,4 +1,4 @@
-import 'simple-keyboard';
+import Keyboard from 'simple-keyboard';
 import SimpleKeyboardAutocorrect from './Autocorrect';
 
 
@@ -8,10 +8,13 @@ it('Keyboard renders without crashing', () => {
   div.className += "simple-keyboard";
   document.body.appendChild(div);
 
-  let keyboard = new SimpleKeyboardAutocorrect({
+  let keyboard = new Keyboard({
     debug: true,
     onChange: input => input,
     onKeyPress: button => button,
-    newLineOnEnter: true
+    newLineOnEnter: true,
+    modules: [
+      SimpleKeyboardAutocorrect
+    ]
   });
 });

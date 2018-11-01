@@ -1,59 +1,56 @@
-import Keyboard from '../lib/components/Autocorrect';
+import Keyboard from 'simple-keyboard';
+import autocorrect from '../lib/components/Autocorrect';
 
 import 'simple-keyboard/build/css/index.css';
 import './css/App.css';
 
-/**
- * Available layouts
- * https://github.com/hodgef/simple-keyboard-layouts/tree/master/src/lib/layouts
- */
-//import layout from '../lib/layouts/japanese';
-
 class App {
   constructor(){
     document.addEventListener('DOMContentLoaded', this.onDOMLoaded);
-
     this.layoutName = "default";
+
+    console.log("Loading huge word list");
   }
 
   onDOMLoaded = async () => {
-    this.keyboard = new Keyboard({
-      onChange: input => this.onChange(input),
-      onKeyPress: button => this.onKeyPress(button),
-      newLineOnEnter: true,
-      layout: {
-        'default': [
-          "\uD83D\uDE00 \uD83D\uDE01 \uD83D\uDE02 \uD83D\uDE03 \uD83D\uDE04 \uD83D\uDE05 \uD83D\uDE00 \uD83D\uDE01",
-          '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
-          '{tab} q w e r t y u i o p [ ] \\',
-          '{lock} a s d f g h j k l ; \' {enter}',
-          '{shift} z x c v b n m , . / {shift}',
-          '.com @ {space}'
+    fetch('https://gist.githubusercontent.com/hodgef/aa18d6be966cc9d8cfe0e83d1320a0bc/raw/e545cb474c771b551728aa1057a7cd51b0b7db14/words.json').then(response => {
+      return response.json();
+    }).then(data => {
+
+      this.keyboard = new Keyboard({
+        onChange: input => this.onChange(input),
+        onKeyPress: button => this.onKeyPress(button),
+        newLineOnEnter: true,
+        autocorrectDict: data,
+        modules: [
+          autocorrect
         ],
-        'shift': [
-          '~ ! @ # $ % ^ & * ( ) _ + {bksp}',
-          '{tab} Q W E R T Y U I O P { } |',
-          '{lock} A S D F G H J K L : " {enter}',
-          '{shift} Z X C V B N M < > ? {shift}',
-          '.com @ {space}'
-        ]
-      }
-    });
-
-    /**
-     * Adding preview (demo only)
-     */
-    document.querySelector('.keyboardContainer').insertAdjacentHTML('beforebegin', `
-    <div class="simple-keyboard-preview">
-      <textarea class="input"></textarea>
-    </div>
-    `);
-
-    document.querySelector(".input").addEventListener("input", event => {
-      this.keyboard.setInput(event.target.value);
-    });
+        onModulesLoaded: () => {
+          document.querySelector(".spinner").classList.add("hide_spinner");
+          console.log("Loaded!");
+        },
+        onAutocorrectPrediction: (word, prediction) => {
+          console.log("Autocorrect:", word, prediction);
+        }
+      });
   
-    console.log(this.keyboard);
+      /**
+       * Adding preview (demo only)
+       */
+      document.querySelector('.keyboardContainer').insertAdjacentHTML('beforebegin', `
+      <div class="simple-keyboard-preview">
+        <textarea class="input"></textarea>
+      </div>
+      `);
+  
+      document.querySelector(".input").addEventListener("input", event => {
+        this.keyboard.setInput(event.target.value);
+      });
+    
+      console.log(this.keyboard);
+    }).catch(err => {
+      console.warn(err);
+    });
   }
 
   handleShiftButton = () => {
