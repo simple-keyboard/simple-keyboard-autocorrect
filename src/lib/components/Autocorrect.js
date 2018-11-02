@@ -11,7 +11,7 @@ class SimpleKeyboardAutocorrect {
         }
 
         module.get = (string) => {
-          return module.set.get(string);
+          return module.wordBank.get(string);
         }
 
         module.setDictionary(keyboard.options.autocorrectDict);
