@@ -13,6 +13,7 @@ it('Keyboard renders without crashing', () => {
     onChange: input => input,
     onKeyPress: button => button,
     newLineOnEnter: true,
+    autocorrectDict: ["data", "test"],
     modules: [
       SimpleKeyboardAutocorrect
     ]
