@@ -1,5 +1,7 @@
 <a href="https://simple-keyboard-autocorrect-demo.glitch.me/" title="See demo" target="_blank"><img src="https://franciscohodge.com/project-pages/simple-keyboard/images/autocorrectX4.png" width="100%"></a>
 <blockquote>Autocorrect module for simple-keyboard</blockquote>
+
+[![Build Status](https://travis-ci.org/hodgef/simple-keyboard-autocorrect.svg?branch=master)](https://travis-ci.org/hodgef/simple-keyboard-autocorrect)
   
 ## Installation
 
