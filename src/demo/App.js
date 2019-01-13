@@ -9,28 +9,35 @@ class App {
     document.addEventListener('DOMContentLoaded', this.onDOMLoaded);
     this.layoutName = "default";
 
-    console.log("Loading huge word list");
+    console.log("Loading word list (Can take a while)");
   }
 
+  longList = 'https://gist.githubusercontent.com/hodgef/aa18d6be966cc9d8cfe0e83d1320a0bc/raw/e545cb474c771b551728aa1057a7cd51b0b7db14/words.json';
+  shortList = 'https://gist.githubusercontent.com/hodgef/91f5056473b82fd85ba5447a3a3416a7/raw/6d044abcddb14462f6068b7aa3e3610c2896c872/words_short.json';
+
   onDOMLoaded = async () => {
-    fetch('https://gist.githubusercontent.com/hodgef/aa18d6be966cc9d8cfe0e83d1320a0bc/raw/e545cb474c771b551728aa1057a7cd51b0b7db14/words.json').then(response => {
+    fetch(this.shortList).then(response => {
       return response.json();
     }).then(data => {
 
       this.keyboard = new Keyboard({
         onChange: input => this.onChange(input),
         onKeyPress: button => this.onKeyPress(button),
-        newLineOnEnter: true,
+        //disableAutocorrectSetInput: true,
+        autocorrectHotkey: "{enter}",
         autocorrectDict: data,
         modules: [
           autocorrect
         ],
         onModulesLoaded: () => {
           document.querySelector(".spinner").classList.add("hide_spinner");
-          console.log("Loaded!");
+          console.log("Loaded", data);
         },
         onAutocorrectPrediction: (word, prediction) => {
           console.log("Autocorrect:", word, prediction);
+          if(this.keyboard){
+            document.querySelector(".input").value = this.keyboard.getInput();
+          }
         }
       });
   
@@ -39,7 +46,7 @@ class App {
        */
       document.querySelector('.keyboardContainer').insertAdjacentHTML('beforebegin', `
       <div class="simple-keyboard-preview">
-        <textarea class="input"></textarea>
+        <textarea class="input" placeholder="Type 'pizzer' and press Enter"></textarea>
       </div>
       `);
   

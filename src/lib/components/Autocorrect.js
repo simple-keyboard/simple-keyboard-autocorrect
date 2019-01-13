@@ -24,16 +24,17 @@ class SimpleKeyboardAutocorrect {
 
           let autocorrectedWord = '';
           let searchFor = '';
-      
-          if(button === hotkey && !keyboard.options.disableAutocorrectSetInput){
+
+          if(button === hotkey){
             let input = keyboard.getInput();
             let inputWords = input.split(" ");
+
             searchFor = inputWords[inputWords.length - 1];
       
             if(inputWords) {
               autocorrectedWord = module.wordBank.get(searchFor);
       
-              if(autocorrectedWord){
+              if(autocorrectedWord && button === hotkey && !keyboard.options.disableAutocorrectSetInput){
                 let autocorrectedWordStr = autocorrectedWord[0][1];
                 inputWords[inputWords.length - 1] = autocorrectedWordStr;
                 keyboard.setInput(inputWords.join(" "));
@@ -42,7 +43,7 @@ class SimpleKeyboardAutocorrect {
             }
           }
 
-          if(typeof keyboard.options.onAutocorrectPrediction === "function" && autocorrectedWord && searchFor){
+          if(typeof keyboard.options.onAutocorrectPrediction === "function" && searchFor){
             keyboard.options.onAutocorrectPrediction(searchFor, autocorrectedWord)
           }
       
