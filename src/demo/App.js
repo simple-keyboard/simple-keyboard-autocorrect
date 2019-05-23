@@ -21,6 +21,7 @@ class App {
     }).then(data => {
 
       this.keyboard = new Keyboard({
+        debug: true,
         onChange: input => this.onChange(input),
         onKeyPress: button => this.onKeyPress(button),
         //disableAutocorrectSetInput: true,

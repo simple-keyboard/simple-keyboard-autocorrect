@@ -38,7 +38,10 @@ class SimpleKeyboardAutocorrect {
                 let autocorrectedWordStr = autocorrectedWord[0][1];
                 inputWords[inputWords.length - 1] = autocorrectedWordStr;
                 keyboard.setInput(inputWords.join(" "));
-                keyboard.utilities.updateCaretPos(autocorrectedWordStr.length);
+                keyboard.caretPosition = keyboard.getInput().length;
+
+                if(keyboard.options.debug)
+                  console.log("keyboard.caretPosition", keyboard.caretPosition);
               }
             }
           }
