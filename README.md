@@ -10,6 +10,6 @@
 
 Check out the [Getting Started](https://franciscohodge.com/projects/simple-keyboard/modules/autocorrect/) docs to begin.
 
-## ⚡️ Options and Customization
+## 📃 Options and Customization
 
 To fully customize your virtual keyboard, check out the main [simple-keyboard repository](https://github.com/hodgef/simple-keyboard).
