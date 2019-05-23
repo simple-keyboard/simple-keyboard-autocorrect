@@ -1,4 +1,4 @@
-<a href="https://simple-keyboard-autocorrect-demo.glitch.me/" title="See demo" target="_blank"><img src="https://franciscohodge.com/project-pages/simple-keyboard/images/autocorrectX4.png" width="100%"></a>
+<a href="https://simple-keyboard-autocorrect-demo.glitch.me/" title="See demo" target="_blank"><img src="https://franciscohodge.com/project-pages/simple-keyboard/images/autocorrectx5.png" width="100%"></a>
 
 [![Build Status](https://travis-ci.org/hodgef/simple-keyboard-autocorrect.svg?branch=master)](https://travis-ci.org/hodgef/simple-keyboard-autocorrect)
   
