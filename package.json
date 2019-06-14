@@ -1,11 +1,12 @@
 {
   "name": "simple-keyboard-autocorrect",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Autocorrect module for simple-keyboard",
   "main": "build/index.js",
   "scripts": {
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
