@@ -1,0 +1,13 @@
+#root {
+  font-family: sans-serif;
+  max-width: 850px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.input {
+  width: 100%;
+  border: 0;
+  padding: 20px;
+  font-size: 20px;
+}
