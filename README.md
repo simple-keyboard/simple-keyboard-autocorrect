@@ -8,7 +8,7 @@
      <img alt="Publish Status" src="https://github.com/hodgef/simple-keyboard-autocorrect/workflows/Publish/badge.svg?color=green" />
   </a>
 
-> **Have an issue or question? [Please post it in the simple-keyboard repository.](https://github.com/hodgef/simple-keyboard/issues)**
+<blockquote>Autocorrect module for simple-keyboard</blockquote>
   
 ## ✨ Demo
 
@@ -21,3 +21,6 @@ Check out the [Getting Started](https://franciscohodge.com/projects/simple-keybo
 ## 📃 Options and Customization
 
 To fully customize your virtual keyboard, check out the main [simple-keyboard repository](https://github.com/hodgef/simple-keyboard).
+
+## ✳️ Questions?
+Have an issue or a question? <strong><a href="https://github.com/hodgef/simple-keyboard/issues">File an issue in the simple-keyboard repository.</a></strong></blockquote>
