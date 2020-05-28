@@ -1,4 +1,4 @@
-<a href="https://franciscohodge.com/projects/simple-keyboard/demo-showcase/module-autocorrect/" title="See demo" target="_blank"><img src="https://franciscohodge.com/project-pages/simple-keyboard/images/autocorrectx5.png" width="100%"></a>
+<a href="https://hodgef.com/simple-keyboard/modules/autocorrect/" title="See demo" target="_blank"><img src="https://i.imgur.com/3Ok9pq4.png" width="100%"></a>
 
 <blockquote>Autocorrect module for simple-keyboard</blockquote>
 
@@ -12,11 +12,11 @@
   
 ## ✨ Demo
 
-[Autocorrect module demo](https://franciscohodge.com/projects/simple-keyboard/demo-showcase/module-autocorrect/)
+[Autocorrect module demo](https://hodgef.com/simple-keyboard/editor/?d=simple-keyboard/simple-keyboard-autocorrect-npm/tree/master)
 
 ## 📦 Installation & Usage
 
-Check out the [Getting Started](https://franciscohodge.com/projects/simple-keyboard/modules/autocorrect/) docs to begin.
+Check out the [Getting Started](https://hodgef.com/simple-keyboard/modules/autocorrect/) docs to begin.
 
 ## 📃 Options and Customization
 
