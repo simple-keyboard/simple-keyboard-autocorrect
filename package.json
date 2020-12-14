@@ -42,7 +42,7 @@
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
     "babel-preset-minify": "^0.5.0",
-    "fuzzyset.js": "0.0.91",
+    "fuzzyset.js": "1.0.6",
     "css-loader": "^5.0.0",
     "file-loader": "^6.0.0",
     "jest": "^26.1.0",
