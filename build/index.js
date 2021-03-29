@@ -1,6 +1,6 @@
 /*!
  * 
- *   simple-keyboard-autocorrect v2.2.142
+ *   simple-keyboard-autocorrect v2.2.143
  *   https://github.com/hodgef/simple-keyboard-autocorrect
  * 
  *   Copyright (c) Francisco Hodge (https://github.com/hodgef)
