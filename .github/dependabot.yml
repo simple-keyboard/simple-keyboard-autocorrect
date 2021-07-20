@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 20
+  ignore:
+  - dependency-name: fuzzyset.js
+    versions:
+    - "> 1.0.6"
+  - dependency-name: fuzzyset.js
+    versions:
+    - 1.0.6
