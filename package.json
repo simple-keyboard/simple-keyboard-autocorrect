@@ -1,6 +1,6 @@
 {
   "name": "simple-keyboard-autocorrect",
-  "version": "2.2.237",
+  "version": "2.2.238",
   "description": "Autocorrect module for simple-keyboard",
   "main": "build/index.js",
   "scripts": {
@@ -36,10 +36,10 @@
   ],
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.15.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.1.0",
     "babel-preset-minify": "^0.5.0",
     "fuzzyset.js": "1.0.6",
@@ -48,7 +48,7 @@
     "jest": "^26.1.0",
     "prettier": "^1.19.1",
     "prettier-webpack-plugin": "^1.2.0",
-    "simple-keyboard": "3.2.34",
+    "simple-keyboard": "3.2.35",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
