@@ -1,6 +1,6 @@
 {
   "name": "simple-keyboard-autocorrect",
-  "version": "2.2.503",
+  "version": "2.2.504",
   "description": "Autocorrect module for simple-keyboard",
   "main": "build/index.js",
   "scripts": {
